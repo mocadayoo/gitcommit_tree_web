@@ -648,7 +648,7 @@
             li.className = 'commit';
             li.innerHTML = `
                 <div class="commit_tree_dot"></div>
-                <span>${commit.shortMessage}</span>
+                <span>${commit.shortMessage} | ${commit.oid.substring(0,6)}</span>
             `;
             ul.appendChild(li);
         });
