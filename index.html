@@ -28,6 +28,7 @@
 
         .commit:not(:last-child)::before {
             content: "";
+            display: block;
             position: absolute;
             left: 5.5px;
             top: 10px;
@@ -51,8 +52,7 @@
 <body>
     <h2> update logs</h2>
     <div id="commit_logs">
-        <ul class="commit_list_views">
-        </ul>
+        
     </div>
 </body>
 <script>
@@ -623,9 +623,15 @@
         }
     }
 
-    const commitListViews = document.getElementsByClassName('commit_list_views')[0];
+    const commitLogsContainer = document.getElementById('commit_logs');
 
     resp.payload.commitGroups.forEach(gp => {
+        const viewTitle = document.createElement('h4');
+        viewTitle.textContent = gp.title
+
+        const ul = document.createElement('ul');
+        ul.className = 'commit_list_views'
+        ul.appendChild(viewTitle)
         gp.commits.forEach(commit => {
             const li = document.createElement('li');
             li.className = 'commit';
@@ -633,8 +639,9 @@
                 <div class="commit_tree_dot"></div>
                 ${commit.shortMessage}
             `;
-            commitListViews.appendChild(li);
+            ul.appendChild(li);
         });
+        commitLogsContainer.appendChild(ul);
     });
 </script>
 </html>
