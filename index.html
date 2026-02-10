@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        :root {
+            --dot-size: 0.6rem;
+            --line-width: 0.15rem;
+        }
+        
         .commit_list_views {
             padding: 0;
             margin: 0;
@@ -16,7 +21,7 @@
         .commit {
             font-size: 14px;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 8px;
             padding-bottom: 20px;
             position: relative;
@@ -30,20 +35,26 @@
             content: "";
             display: block;
             position: absolute;
-            left: 5.5px;
-            top: 10px;
-            bottom: -4px;
-            width: 2px;
+            left: calc(var(--dot-size) / 2 + var(--line-width) / 2);
+            top: 5px;
+            bottom: -5px;
+            width: var(--line-width);
             background-color: black;
         }
 
+        .commit > span {
+            padding-left: 1.2rem;
+        }
+
         .commit>.commit_tree_dot {
-            position: relative;
-            width: 10px;
-            height: 10px;
+            margin-top: 0.3rem;
+            position: absolute;
+            width: var(--dot-size);
+            height: var(--dot-size);
             border-radius: 50%;
             border: solid 2px;
             z-index: 1;
+            flex-shrink: 0;
             background-color: white;
         }
     </style>
@@ -637,7 +648,7 @@
             li.className = 'commit';
             li.innerHTML = `
                 <div class="commit_tree_dot"></div>
-                ${commit.shortMessage}
+                <span>${commit.shortMessage}</span>
             `;
             ul.appendChild(li);
         });
