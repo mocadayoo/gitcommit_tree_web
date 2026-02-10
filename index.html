@@ -10,7 +10,7 @@
             --dot-size: 0.6rem;
             --line-width: 0.15rem;
         }
-        
+
         .commit_list_views {
             padding: 0;
             margin: 0;
@@ -42,7 +42,7 @@
             background-color: black;
         }
 
-        .commit > span {
+        .commit>span {
             padding-left: 1.2rem;
         }
 
@@ -63,596 +63,60 @@
 <body>
     <h2> update logs</h2>
     <div id="commit_logs">
-        
+
     </div>
 </body>
 <script>
-    const resp = {
-        "payload": {
-            "commitGroups": [
-                {
-                    "title": "Feb 8, 2026",
-                    "commits": [
-                        {
-                            "oid": "045eaca9aec4b7c7dc45fcdfeeea7841effb5892",
-                            "url": "/mocadayoo/handtracking/commit/045eaca9aec4b7c7dc45fcdfeeea7841effb5892",
-                            "authoredDate": "2026-02-08T23:23:21.000+09:00",
-                            "committedDate": "2026-02-08T23:23:21.000+09:00",
-                            "shortMessage": "refactor: add test for finger_pose to main.py",
-                            "shortMessageMarkdown": null,
-                            "shortMessageMarkdownLink": "\u003ca data-pjax=\"true\" title=\"refactor: add test for finger_pose to main.py\" class=\"color-fg-default\" href=\"/mocadayoo/handtracking/commit/045eaca9aec4b7c7dc45fcdfeeea7841effb5892\"\u003erefactor: add test for finger_pose to main.py\u003c/a\u003e",
-                            "bodyMessageHtml": "",
-                            "authors": [
-                                {
-                                    "login": "mocadayoo",
-                                    "displayName": "mocadayoo",
-                                    "avatarUrl": "https://avatars.githubusercontent.com/u/192976698?v=4",
-                                    "path": "/mocadayoo",
-                                    "profileName": "Moca",
-                                    "isGitHub": false
-                                }
-                            ],
-                            "committerAttribution": false,
-                            "committer": {
-                                "login": "mocadayoo",
-                                "displayName": "mocadayoo",
-                                "avatarUrl": "https://avatars.githubusercontent.com/u/192976698?v=4",
-                                "path": "/mocadayoo",
-                                "profileName": "Moca",
-                                "isGitHub": false
-                            },
-                            "pusher": null,
-                            "pushedDate": null
-                        },
-                        {
-                            "oid": "94c9813def2e099ed5f6903faba38b217f88b67e",
-                            "url": "/mocadayoo/handtracking/commit/94c9813def2e099ed5f6903faba38b217f88b67e",
-                            "authoredDate": "2026-02-08T23:20:42.000+09:00",
-                            "committedDate": "2026-02-08T23:20:42.000+09:00",
-                            "shortMessage": "add: fingerupを元に現在のポーズを返すutilを作成 (finger_pose at get_pose)",
-                            "shortMessageMarkdown": null,
-                            "shortMessageMarkdownLink": "\u003ca data-pjax=\"true\" title=\"add: fingerupを元に現在のポーズを返すutilを作成 (finger_pose at get_pose)\" class=\"color-fg-default\" href=\"/mocadayoo/handtracking/commit/94c9813def2e099ed5f6903faba38b217f88b67e\"\u003eadd: fingerupを元に現在のポーズを返すutilを作成 (finger_pose at get_pose)\u003c/a\u003e",
-                            "bodyMessageHtml": "",
-                            "authors": [
-                                {
-                                    "login": "mocadayoo",
-                                    "displayName": "mocadayoo",
-                                    "avatarUrl": "https://avatars.githubusercontent.com/u/192976698?v=4",
-                                    "path": "/mocadayoo",
-                                    "profileName": "Moca",
-                                    "isGitHub": false
-                                }
-                            ],
-                            "committerAttribution": false,
-                            "committer": {
-                                "login": "mocadayoo",
-                                "displayName": "mocadayoo",
-                                "avatarUrl": "https://avatars.githubusercontent.com/u/192976698?v=4",
-                                "path": "/mocadayoo",
-                                "profileName": "Moca",
-                                "isGitHub": false
-                            },
-                            "pusher": null,
-                            "pushedDate": null
-                        }
-                    ]
-                },
-                {
-                    "title": "Feb 5, 2026",
-                    "commits": [
-                        {
-                            "oid": "9db79692d8fc8d51c85f2a9c27f7f610395d23a8",
-                            "url": "/mocadayoo/handtracking/commit/9db79692d8fc8d51c85f2a9c27f7f610395d23a8",
-                            "authoredDate": "2026-02-05T14:31:18.000+09:00",
-                            "committedDate": "2026-02-05T14:31:18.000+09:00",
-                            "shortMessage": "add: 親指だけの閾値を別で用意 \u0026 比較対象の関節を変更",
-                            "shortMessageMarkdown": null,
-                            "shortMessageMarkdownLink": "\u003ca data-pjax=\"true\" title=\"add: 親指だけの閾値を別で用意 \u0026amp; 比較対象の関節を変更\" class=\"color-fg-default\" href=\"/mocadayoo/handtracking/commit/9db79692d8fc8d51c85f2a9c27f7f610395d23a8\"\u003eadd: 親指だけの閾値を別で用意 \u0026amp; 比較対象の関節を変更\u003c/a\u003e",
-                            "bodyMessageHtml": "",
-                            "authors": [
-                                {
-                                    "login": "mocadayoo",
-                                    "displayName": "mocadayoo",
-                                    "avatarUrl": "https://avatars.githubusercontent.com/u/192976698?v=4",
-                                    "path": "/mocadayoo",
-                                    "profileName": "Moca",
-                                    "isGitHub": false
-                                }
-                            ],
-                            "committerAttribution": false,
-                            "committer": {
-                                "login": "mocadayoo",
-                                "displayName": "mocadayoo",
-                                "avatarUrl": "https://avatars.githubusercontent.com/u/192976698?v=4",
-                                "path": "/mocadayoo",
-                                "profileName": "Moca",
-                                "isGitHub": false
-                            },
-                            "pusher": null,
-                            "pushedDate": null
-                        },
-                        {
-                            "oid": "88332b5ce10ef615ce326fe26a179a9b99459915",
-                            "url": "/mocadayoo/handtracking/commit/88332b5ce10ef615ce326fe26a179a9b99459915",
-                            "authoredDate": "2026-02-05T14:17:39.000+09:00",
-                            "committedDate": "2026-02-05T14:17:39.000+09:00",
-                            "shortMessage": "fix: maxfpsの誤差があるため少しだけ数値を上げるようにした。 またfpsの表示を平均に変更",
-                            "shortMessageMarkdown": null,
-                            "shortMessageMarkdownLink": "\u003ca data-pjax=\"true\" title=\"fix: maxfpsの誤差があるため少しだけ数値を上げるようにした。 またfpsの表示を平均に変更\" class=\"color-fg-default\" href=\"/mocadayoo/handtracking/commit/88332b5ce10ef615ce326fe26a179a9b99459915\"\u003efix: maxfpsの誤差があるため少しだけ数値を上げるようにした。 またfpsの表示を平均に変更\u003c/a\u003e",
-                            "bodyMessageHtml": "",
-                            "authors": [
-                                {
-                                    "login": "mocadayoo",
-                                    "displayName": "mocadayoo",
-                                    "avatarUrl": "https://avatars.githubusercontent.com/u/192976698?v=4",
-                                    "path": "/mocadayoo",
-                                    "profileName": "Moca",
-                                    "isGitHub": false
-                                }
-                            ],
-                            "committerAttribution": false,
-                            "committer": {
-                                "login": "mocadayoo",
-                                "displayName": "mocadayoo",
-                                "avatarUrl": "https://avatars.githubusercontent.com/u/192976698?v=4",
-                                "path": "/mocadayoo",
-                                "profileName": "Moca",
-                                "isGitHub": false
-                            },
-                            "pusher": null,
-                            "pushedDate": null
-                        },
-                        {
-                            "oid": "bd63f20f6e80bd5dac9e3e51faa38debd01cebf6",
-                            "url": "/mocadayoo/handtracking/commit/bd63f20f6e80bd5dac9e3e51faa38debd01cebf6",
-                            "authoredDate": "2026-02-05T14:04:52.000+09:00",
-                            "committedDate": "2026-02-05T14:04:52.000+09:00",
-                            "shortMessage": "add: MAXFPSの追加",
-                            "shortMessageMarkdown": null,
-                            "shortMessageMarkdownLink": "\u003ca data-pjax=\"true\" title=\"add: MAXFPSの追加\" class=\"color-fg-default\" href=\"/mocadayoo/handtracking/commit/bd63f20f6e80bd5dac9e3e51faa38debd01cebf6\"\u003eadd: MAXFPSの追加\u003c/a\u003e",
-                            "bodyMessageHtml": "",
-                            "authors": [
-                                {
-                                    "login": "mocadayoo",
-                                    "displayName": "mocadayoo",
-                                    "avatarUrl": "https://avatars.githubusercontent.com/u/192976698?v=4",
-                                    "path": "/mocadayoo",
-                                    "profileName": "Moca",
-                                    "isGitHub": false
-                                }
-                            ],
-                            "committerAttribution": false,
-                            "committer": {
-                                "login": "mocadayoo",
-                                "displayName": "mocadayoo",
-                                "avatarUrl": "https://avatars.githubusercontent.com/u/192976698?v=4",
-                                "path": "/mocadayoo",
-                                "profileName": "Moca",
-                                "isGitHub": false
-                            },
-                            "pusher": null,
-                            "pushedDate": null
-                        },
-                        {
-                            "oid": "783d087230da82fa6a0bfe1baebad4641a6d95a5",
-                            "url": "/mocadayoo/handtracking/commit/783d087230da82fa6a0bfe1baebad4641a6d95a5",
-                            "authoredDate": "2026-02-05T13:43:02.000+09:00",
-                            "committedDate": "2026-02-05T13:43:02.000+09:00",
-                            "shortMessage": "refactor: コメントアウトしていた不要なコードを消去 (同じ機能をほかの関数で作ったため)",
-                            "shortMessageMarkdown": null,
-                            "shortMessageMarkdownLink": "\u003ca data-pjax=\"true\" title=\"refactor: コメントアウトしていた不要なコードを消去 (同じ機能をほかの関数で作ったため)\" class=\"color-fg-default\" href=\"/mocadayoo/handtracking/commit/783d087230da82fa6a0bfe1baebad4641a6d95a5\"\u003erefactor: コメントアウトしていた不要なコードを消去 (同じ機能をほかの関数で作ったため)\u003c/a\u003e",
-                            "bodyMessageHtml": "",
-                            "authors": [
-                                {
-                                    "login": "mocadayoo",
-                                    "displayName": "mocadayoo",
-                                    "avatarUrl": "https://avatars.githubusercontent.com/u/192976698?v=4",
-                                    "path": "/mocadayoo",
-                                    "profileName": "Moca",
-                                    "isGitHub": false
-                                }
-                            ],
-                            "committerAttribution": false,
-                            "committer": {
-                                "login": "mocadayoo",
-                                "displayName": "mocadayoo",
-                                "avatarUrl": "https://avatars.githubusercontent.com/u/192976698?v=4",
-                                "path": "/mocadayoo",
-                                "profileName": "Moca",
-                                "isGitHub": false
-                            },
-                            "pusher": null,
-                            "pushedDate": null
-                        },
-                        {
-                            "oid": "f0a61946d352108b179dfb49d92ecd9a088beb2a",
-                            "url": "/mocadayoo/handtracking/commit/f0a61946d352108b179dfb49d92ecd9a088beb2a",
-                            "authoredDate": "2026-02-05T02:38:17.000+09:00",
-                            "committedDate": "2026-02-05T02:38:17.000+09:00",
-                            "shortMessage": "fix: thresholdを外部に出すことによって調整をしやすくした。また、jsonの順番を指の順番と合わせた。",
-                            "shortMessageMarkdown": null,
-                            "shortMessageMarkdownLink": "\u003ca data-pjax=\"true\" title=\"fix: thresholdを外部に出すことによって調整をしやすくした。また、jsonの順番を指の順番と合わせた。\" class=\"color-fg-default\" href=\"/mocadayoo/handtracking/commit/f0a61946d352108b179dfb49d92ecd9a088beb2a\"\u003efix: thresholdを外部に出すことによって調整をしやすくした。また、jsonの順番を指の順番と合わせた。\u003c/a\u003e",
-                            "bodyMessageHtml": "",
-                            "authors": [
-                                {
-                                    "login": "mocadayoo",
-                                    "displayName": "mocadayoo",
-                                    "avatarUrl": "https://avatars.githubusercontent.com/u/192976698?v=4",
-                                    "path": "/mocadayoo",
-                                    "profileName": "Moca",
-                                    "isGitHub": false
-                                }
-                            ],
-                            "committerAttribution": false,
-                            "committer": {
-                                "login": "mocadayoo",
-                                "displayName": "mocadayoo",
-                                "avatarUrl": "https://avatars.githubusercontent.com/u/192976698?v=4",
-                                "path": "/mocadayoo",
-                                "profileName": "Moca",
-                                "isGitHub": false
-                            },
-                            "pusher": null,
-                            "pushedDate": null
-                        },
-                        {
-                            "oid": "2585757a2c3fac6e00f5acc6f50a1233ff28fbb4",
-                            "url": "/mocadayoo/handtracking/commit/2585757a2c3fac6e00f5acc6f50a1233ff28fbb4",
-                            "authoredDate": "2026-02-05T02:28:49.000+09:00",
-                            "committedDate": "2026-02-05T02:28:49.000+09:00",
-                            "shortMessage": "add: get finger upをjsonで返す関数を作成",
-                            "shortMessageMarkdown": null,
-                            "shortMessageMarkdownLink": "\u003ca data-pjax=\"true\" title=\"add: get finger upをjsonで返す関数を作成\" class=\"color-fg-default\" href=\"/mocadayoo/handtracking/commit/2585757a2c3fac6e00f5acc6f50a1233ff28fbb4\"\u003eadd: get finger upをjsonで返す関数を作成\u003c/a\u003e",
-                            "bodyMessageHtml": "",
-                            "authors": [
-                                {
-                                    "login": "mocadayoo",
-                                    "displayName": "mocadayoo",
-                                    "avatarUrl": "https://avatars.githubusercontent.com/u/192976698?v=4",
-                                    "path": "/mocadayoo",
-                                    "profileName": "Moca",
-                                    "isGitHub": false
-                                }
-                            ],
-                            "committerAttribution": false,
-                            "committer": {
-                                "login": "mocadayoo",
-                                "displayName": "mocadayoo",
-                                "avatarUrl": "https://avatars.githubusercontent.com/u/192976698?v=4",
-                                "path": "/mocadayoo",
-                                "profileName": "Moca",
-                                "isGitHub": false
-                            },
-                            "pusher": null,
-                            "pushedDate": null
-                        },
-                        {
-                            "oid": "865c930c17fb7c7d5e268b7f4bbb0dd28c145632",
-                            "url": "/mocadayoo/handtracking/commit/865c930c17fb7c7d5e268b7f4bbb0dd28c145632",
-                            "authoredDate": "2026-02-05T02:05:48.000+09:00",
-                            "committedDate": "2026-02-05T02:05:48.000+09:00",
-                            "shortMessage": "add: README.mdを追加",
-                            "shortMessageMarkdown": null,
-                            "shortMessageMarkdownLink": "\u003ca data-pjax=\"true\" title=\"add: README.mdを追加\" class=\"color-fg-default\" href=\"/mocadayoo/handtracking/commit/865c930c17fb7c7d5e268b7f4bbb0dd28c145632\"\u003eadd: README.mdを追加\u003c/a\u003e",
-                            "bodyMessageHtml": "",
-                            "authors": [
-                                {
-                                    "login": "mocadayoo",
-                                    "displayName": "mocadayoo",
-                                    "avatarUrl": "https://avatars.githubusercontent.com/u/192976698?v=4",
-                                    "path": "/mocadayoo",
-                                    "profileName": "Moca",
-                                    "isGitHub": false
-                                }
-                            ],
-                            "committerAttribution": false,
-                            "committer": {
-                                "login": "mocadayoo",
-                                "displayName": "mocadayoo",
-                                "avatarUrl": "https://avatars.githubusercontent.com/u/192976698?v=4",
-                                "path": "/mocadayoo",
-                                "profileName": "Moca",
-                                "isGitHub": false
-                            },
-                            "pusher": null,
-                            "pushedDate": null
-                        },
-                        {
-                            "oid": "516fac3d9cc7098740084fc799b7f1e1232f7551",
-                            "url": "/mocadayoo/handtracking/commit/516fac3d9cc7098740084fc799b7f1e1232f7551",
-                            "authoredDate": "2026-02-05T01:31:06.000+09:00",
-                            "committedDate": "2026-02-05T01:31:06.000+09:00",
-                            "shortMessage": "refactor: コメントアウトでミスがあったので修正",
-                            "shortMessageMarkdown": null,
-                            "shortMessageMarkdownLink": "\u003ca data-pjax=\"true\" title=\"refactor: コメントアウトでミスがあったので修正\" class=\"color-fg-default\" href=\"/mocadayoo/handtracking/commit/516fac3d9cc7098740084fc799b7f1e1232f7551\"\u003erefactor: コメントアウトでミスがあったので修正\u003c/a\u003e",
-                            "bodyMessageHtml": "",
-                            "authors": [
-                                {
-                                    "login": "mocadayoo",
-                                    "displayName": "mocadayoo",
-                                    "avatarUrl": "https://avatars.githubusercontent.com/u/192976698?v=4",
-                                    "path": "/mocadayoo",
-                                    "profileName": "Moca",
-                                    "isGitHub": false
-                                }
-                            ],
-                            "committerAttribution": false,
-                            "committer": {
-                                "login": "mocadayoo",
-                                "displayName": "mocadayoo",
-                                "avatarUrl": "https://avatars.githubusercontent.com/u/192976698?v=4",
-                                "path": "/mocadayoo",
-                                "profileName": "Moca",
-                                "isGitHub": false
-                            },
-                            "pusher": null,
-                            "pushedDate": null
-                        },
-                        {
-                            "oid": "a6eefc78a249175485b2eb8504a2c88c8ded3108",
-                            "url": "/mocadayoo/handtracking/commit/a6eefc78a249175485b2eb8504a2c88c8ded3108",
-                            "authoredDate": "2026-02-05T01:19:58.000+09:00",
-                            "committedDate": "2026-02-05T01:19:58.000+09:00",
-                            "shortMessage": "add: finger_up_countでxyだけではなくzも使うようにした (精度向上)",
-                            "shortMessageMarkdown": null,
-                            "shortMessageMarkdownLink": "\u003ca data-pjax=\"true\" title=\"add: finger_up_countでxyだけではなくzも使うようにした (精度向上)\" class=\"color-fg-default\" href=\"/mocadayoo/handtracking/commit/a6eefc78a249175485b2eb8504a2c88c8ded3108\"\u003eadd: finger_up_countでxyだけではなくzも使うようにした (精度向上)\u003c/a\u003e",
-                            "bodyMessageHtml": "",
-                            "authors": [
-                                {
-                                    "login": "mocadayoo",
-                                    "displayName": "mocadayoo",
-                                    "avatarUrl": "https://avatars.githubusercontent.com/u/192976698?v=4",
-                                    "path": "/mocadayoo",
-                                    "profileName": "Moca",
-                                    "isGitHub": false
-                                }
-                            ],
-                            "committerAttribution": false,
-                            "committer": {
-                                "login": "mocadayoo",
-                                "displayName": "mocadayoo",
-                                "avatarUrl": "https://avatars.githubusercontent.com/u/192976698?v=4",
-                                "path": "/mocadayoo",
-                                "profileName": "Moca",
-                                "isGitHub": false
-                            },
-                            "pusher": null,
-                            "pushedDate": null
-                        },
-                        {
-                            "oid": "e4cfa5314b1f31624f1587406dbf25c5804185bb",
-                            "url": "/mocadayoo/handtracking/commit/e4cfa5314b1f31624f1587406dbf25c5804185bb",
-                            "authoredDate": "2026-02-05T01:13:25.000+09:00",
-                            "committedDate": "2026-02-05T01:13:25.000+09:00",
-                            "shortMessage": "fix: finger up countでベクトルを使った方式にすることにより様々な向きで正しい検知を可能にした。",
-                            "shortMessageMarkdown": null,
-                            "shortMessageMarkdownLink": "\u003ca data-pjax=\"true\" title=\"fix: finger up countでベクトルを使った方式にすることにより様々な向きで正しい検知を可能にした。\" class=\"color-fg-default\" href=\"/mocadayoo/handtracking/commit/e4cfa5314b1f31624f1587406dbf25c5804185bb\"\u003efix: finger up countでベクトルを使った方式にすることにより様々な向きで正しい検知を可能にした。\u003c/a\u003e",
-                            "bodyMessageHtml": "",
-                            "authors": [
-                                {
-                                    "login": "mocadayoo",
-                                    "displayName": "mocadayoo",
-                                    "avatarUrl": "https://avatars.githubusercontent.com/u/192976698?v=4",
-                                    "path": "/mocadayoo",
-                                    "profileName": "Moca",
-                                    "isGitHub": false
-                                }
-                            ],
-                            "committerAttribution": false,
-                            "committer": {
-                                "login": "mocadayoo",
-                                "displayName": "mocadayoo",
-                                "avatarUrl": "https://avatars.githubusercontent.com/u/192976698?v=4",
-                                "path": "/mocadayoo",
-                                "profileName": "Moca",
-                                "isGitHub": false
-                            },
-                            "pusher": null,
-                            "pushedDate": null
-                        },
-                        {
-                            "oid": "3a8f392bfbc456234622639d0d0d70b3180467b7",
-                            "url": "/mocadayoo/handtracking/commit/3a8f392bfbc456234622639d0d0d70b3180467b7",
-                            "authoredDate": "2026-02-05T00:06:09.000+09:00",
-                            "committedDate": "2026-02-05T00:06:09.000+09:00",
-                            "shortMessage": "add: fps counter \u0026 finger counter show on window",
-                            "shortMessageMarkdown": null,
-                            "shortMessageMarkdownLink": "\u003ca data-pjax=\"true\" title=\"add: fps counter \u0026amp; finger counter show on window\" class=\"color-fg-default\" href=\"/mocadayoo/handtracking/commit/3a8f392bfbc456234622639d0d0d70b3180467b7\"\u003eadd: fps counter \u0026amp; finger counter show on window\u003c/a\u003e",
-                            "bodyMessageHtml": "",
-                            "authors": [
-                                {
-                                    "login": "mocadayoo",
-                                    "displayName": "mocadayoo",
-                                    "avatarUrl": "https://avatars.githubusercontent.com/u/192976698?v=4",
-                                    "path": "/mocadayoo",
-                                    "profileName": "Moca",
-                                    "isGitHub": false
-                                }
-                            ],
-                            "committerAttribution": false,
-                            "committer": {
-                                "login": "mocadayoo",
-                                "displayName": "mocadayoo",
-                                "avatarUrl": "https://avatars.githubusercontent.com/u/192976698?v=4",
-                                "path": "/mocadayoo",
-                                "profileName": "Moca",
-                                "isGitHub": false
-                            },
-                            "pusher": null,
-                            "pushedDate": null
-                        }
-                    ]
-                },
-                {
-                    "title": "Feb 4, 2026",
-                    "commits": [
-                        {
-                            "oid": "1bad4f30f941a21386d34ed64c7a0805f7a5b4a5",
-                            "url": "/mocadayoo/handtracking/commit/1bad4f30f941a21386d34ed64c7a0805f7a5b4a5",
-                            "authoredDate": "2026-02-04T23:21:48.000+09:00",
-                            "committedDate": "2026-02-04T23:21:48.000+09:00",
-                            "shortMessage": "add: finger up counter",
-                            "shortMessageMarkdown": null,
-                            "shortMessageMarkdownLink": "\u003ca data-pjax=\"true\" title=\"add: finger up counter\" class=\"color-fg-default\" href=\"/mocadayoo/handtracking/commit/1bad4f30f941a21386d34ed64c7a0805f7a5b4a5\"\u003eadd: finger up counter\u003c/a\u003e",
-                            "bodyMessageHtml": "",
-                            "authors": [
-                                {
-                                    "login": "mocadayoo",
-                                    "displayName": "mocadayoo",
-                                    "avatarUrl": "https://avatars.githubusercontent.com/u/192976698?v=4",
-                                    "path": "/mocadayoo",
-                                    "profileName": "Moca",
-                                    "isGitHub": false
-                                }
-                            ],
-                            "committerAttribution": false,
-                            "committer": {
-                                "login": "mocadayoo",
-                                "displayName": "mocadayoo",
-                                "avatarUrl": "https://avatars.githubusercontent.com/u/192976698?v=4",
-                                "path": "/mocadayoo",
-                                "profileName": "Moca",
-                                "isGitHub": false
-                            },
-                            "pusher": null,
-                            "pushedDate": null
-                        },
-                        {
-                            "oid": "7aff1f330ee38c75483cc44835470e1a7b26e61e",
-                            "url": "/mocadayoo/handtracking/commit/7aff1f330ee38c75483cc44835470e1a7b26e61e",
-                            "authoredDate": "2026-02-04T15:55:50.000+09:00",
-                            "committedDate": "2026-02-04T15:55:50.000+09:00",
-                            "shortMessage": "add: hand track \u0026 draw landmark",
-                            "shortMessageMarkdown": null,
-                            "shortMessageMarkdownLink": "\u003ca data-pjax=\"true\" title=\"add: hand track \u0026amp; draw landmark\" class=\"color-fg-default\" href=\"/mocadayoo/handtracking/commit/7aff1f330ee38c75483cc44835470e1a7b26e61e\"\u003eadd: hand track \u0026amp; draw landmark\u003c/a\u003e",
-                            "bodyMessageHtml": "",
-                            "authors": [
-                                {
-                                    "login": "mocadayoo",
-                                    "displayName": "mocadayoo",
-                                    "avatarUrl": "https://avatars.githubusercontent.com/u/192976698?v=4",
-                                    "path": "/mocadayoo",
-                                    "profileName": "Moca",
-                                    "isGitHub": false
-                                }
-                            ],
-                            "committerAttribution": false,
-                            "committer": {
-                                "login": "mocadayoo",
-                                "displayName": "mocadayoo",
-                                "avatarUrl": "https://avatars.githubusercontent.com/u/192976698?v=4",
-                                "path": "/mocadayoo",
-                                "profileName": "Moca",
-                                "isGitHub": false
-                            },
-                            "pusher": null,
-                            "pushedDate": null
-                        },
-                        {
-                            "oid": "8f440ab93d612f263586322dcfe82ab54cb5d57e",
-                            "url": "/mocadayoo/handtracking/commit/8f440ab93d612f263586322dcfe82ab54cb5d57e",
-                            "authoredDate": "2026-02-04T15:11:27.000+09:00",
-                            "committedDate": "2026-02-04T15:11:27.000+09:00",
-                            "shortMessage": "init commit \u0026 add: camera capture",
-                            "shortMessageMarkdown": null,
-                            "shortMessageMarkdownLink": "\u003ca data-pjax=\"true\" title=\"init commit \u0026amp; add: camera capture\" class=\"color-fg-default\" href=\"/mocadayoo/handtracking/commit/8f440ab93d612f263586322dcfe82ab54cb5d57e\"\u003einit commit \u0026amp; add: camera capture\u003c/a\u003e",
-                            "bodyMessageHtml": "",
-                            "authors": [
-                                {
-                                    "login": "mocadayoo",
-                                    "displayName": "mocadayoo",
-                                    "avatarUrl": "https://avatars.githubusercontent.com/u/192976698?v=4",
-                                    "path": "/mocadayoo",
-                                    "profileName": "Moca",
-                                    "isGitHub": false
-                                }
-                            ],
-                            "committerAttribution": false,
-                            "committer": {
-                                "login": "mocadayoo",
-                                "displayName": "mocadayoo",
-                                "avatarUrl": "https://avatars.githubusercontent.com/u/192976698?v=4",
-                                "path": "/mocadayoo",
-                                "profileName": "Moca",
-                                "isGitHub": false
-                            },
-                            "pusher": null,
-                            "pushedDate": null
-                        }
-                    ]
-                }
-            ],
-            "currentCommit": {
-                "oid": "045eaca9aec4b7c7dc45fcdfeeea7841effb5892"
-            },
-            "filters": {
-                "since": null,
-                "until": null,
-                "author": null,
-                "newPath": null,
-                "originalBranch": null,
-                "currentBlobPath": null,
-                "pagination": {
-                    "startCursor": "045eaca9aec4b7c7dc45fcdfeeea7841effb5892 0",
-                    "endCursor": "045eaca9aec4b7c7dc45fcdfeeea7841effb5892 15",
-                    "hasNextPage": false,
-                    "hasPreviousPage": false
-                }
-            },
-            "metadata": {
-                "browsingRenameHistory": null,
-                "showProfileHelp": false,
-                "deferredDataUrl": "/mocadayoo/handtracking/commits/deferred_commit_data/master",
-                "deferredContributorUrl": "/mocadayoo/handtracking/commits/deferred_commit_contributors",
-                "softNavToCommit": true
-            },
-            "repo": {
-                "id": 1149457558,
-                "defaultBranch": "master",
-                "name": "handtracking",
-                "ownerLogin": "mocadayoo",
-                "currentUserCanPush": true,
-                "isFork": false,
-                "isEmpty": false,
-                "createdAt": "2026-02-04T15:11:32.000+09:00",
-                "ownerAvatar": "https://avatars.githubusercontent.com/u/192976698?v=4",
-                "public": true,
-                "private": false,
-                "isOrgOwned": false
-            },
-            "refInfo": {
-                "name": "master",
-                "listCacheKey": "v0:1770185494.0",
-                "refType": "branch",
-                "currentOid": "045eaca9aec4b7c7dc45fcdfeeea7841effb5892"
-            },
-            "timedOutMessage": ""
-        },
-        "title": "Commits · mocadayoo/handtracking",
-        "appPayload": {
-            "helpUrl": "https://docs.github.com"
+    async function getCommits(name, repo) {
+        const resp = await fetch(`https://api.github.com/repos/${name}/${repo}/commits`)
+
+        if (resp.ok) {
+            return resp.json();
+        } else {
+            throw new Error(resp);
         }
     }
 
     const commitLogsContainer = document.getElementById('commit_logs');
 
-    resp.payload.commitGroups.forEach(gp => {
-        const viewTitle = document.createElement('h4');
-        viewTitle.textContent = gp.title
+    async function createCommitViews() {
+        const resp = await getCommits('mocadayoo', 'handtracking');
+        const dateGroup = resp.reduce((acc, commit) => {
+            const date = new Date(commit.commit.author.date);
+            const title = date.toLocaleDateString('en-US', {
+                month: 'short', day: 'numeric', year: 'numeric'
+            });
 
-        const ul = document.createElement('ul');
-        ul.className = 'commit_list_views'
-        ul.appendChild(viewTitle)
-        gp.commits.forEach(commit => {
-            const li = document.createElement('li');
-            li.className = 'commit';
-            li.innerHTML = `
+            if (!acc[title]) acc[title] = [];
+            acc[title].push({
+                shortMessage: commit.commit.message.split('\n')[0],
+                hash: commit.sha
+            });
+            return acc;
+        }, {});
+
+        Object.keys(dateGroup).forEach(title => {
+            const viewTitle = document.createElement('h4');
+            viewTitle.textContent = title;
+
+            const ul = document.createElement('ul');
+            ul.className = 'commit_list_views';
+            ul.appendChild(viewTitle)
+
+            dateGroup[title].forEach(commit => {
+                const li = document.createElement('li');
+                li.className = 'commit';
+                li.innerHTML = `
                 <div class="commit_tree_dot"></div>
-                <span>${commit.shortMessage} | ${commit.oid.substring(0,6)}</span>
+                <span>${commit.shortMessage} <small style="color: #999; margin-left: 8px;">${commit.hash.substring(0, 6)}</small></span>
             `;
-            ul.appendChild(li);
+                ul.appendChild(li);
+            });
+            commitLogsContainer.appendChild(ul);
         });
-        commitLogsContainer.appendChild(ul);
-    });
+    }
+
+    createCommitViews();
 </script>
+
 </html>
