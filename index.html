@@ -8,6 +8,7 @@
     <style>
         :root {
             --dot-size: 0.6rem;
+            --line-color: #e1e4e8;
             --line-width: 0.15rem;
         }
 
@@ -39,11 +40,20 @@
             top: 5px;
             bottom: -5px;
             width: var(--line-width);
-            background-color: black;
+            background-color: var(--line-color);
         }
 
         .commit>span {
             padding-left: 1.2rem;
+        }
+
+        .commit_hash {
+            color: #999;
+            margin-left: 8px;
+            font-size: 0.68rem;
+            padding: 0.22rem;
+            border-radius: 0.2rem 0.25rem;
+            background-color: var(--line-color);
         }
 
         .commit>.commit_tree_dot {
@@ -52,7 +62,7 @@
             width: var(--dot-size);
             height: var(--dot-size);
             border-radius: 50%;
-            border: solid 2px;
+            border: solid 2px var(--line-color);
             z-index: 1;
             flex-shrink: 0;
             background-color: white;
@@ -108,7 +118,7 @@
                 li.className = 'commit';
                 li.innerHTML = `
                 <div class="commit_tree_dot"></div>
-                <span>${commit.shortMessage} <small style="color: #999; margin-left: 8px;">${commit.hash.substring(0, 6)}</small></span>
+                <span>${commit.shortMessage}</span><label class="commit_hash">${commit.hash.substring(0, 6)}</label>
             `;
                 ul.appendChild(li);
             });
