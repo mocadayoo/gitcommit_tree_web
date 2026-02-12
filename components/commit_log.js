@@ -4,7 +4,7 @@ class CommitLogs extends HTMLElement {
         this.attachShadow({ mode: "open" });
     }
 
-    static get getAttributes() {
+    static get observedAttributes() {
         return ["user", "repo"];
     }
 
