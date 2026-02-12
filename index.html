@@ -8,6 +8,7 @@
     <style>
         :root {
             --dot-size: 0.6rem;
+            --hover-color: #f97316;
             --line-color: #e1e4e8;
             --line-width: 0.15rem;
         }
@@ -42,18 +43,15 @@
             width: var(--line-width);
             background-color: var(--line-color);
         }
-
-        .commit>span {
-            padding-left: 1.2rem;
+        
+        .commit_tree_dot {
+            transition: transform .2s;
         }
 
-        .commit_hash {
-            color: #999;
-            margin-left: 8px;
-            font-size: 0.68rem;
-            padding: 0.22rem;
-            border-radius: 0.2rem 0.25rem;
-            background-color: var(--line-color);
+        .commit_text {
+            padding-left: 1.2rem;
+            transform-origin: left;
+            transition: transform .2s;
         }
 
         .commit>.commit_tree_dot {
@@ -66,6 +64,25 @@
             z-index: 1;
             flex-shrink: 0;
             background-color: white;
+            transition: border .2s;
+        }
+
+        .commit_hash {
+            color: #999;
+            margin-left: 8px;
+            font-size: 0.68rem;
+            padding: 0.22rem;
+            border-radius: 0.2rem 0.25rem;
+            background-color: var(--line-color);
+        }
+
+        .commit:hover > .commit_tree_dot {
+            border: solid 2px var(--hover-color);
+            transform: scale(1.2);
+        }
+
+        .commit:hover > .commit_text {
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -118,7 +135,7 @@
                 li.className = 'commit';
                 li.innerHTML = `
                 <div class="commit_tree_dot"></div>
-                <span>${commit.shortMessage}</span><label class="commit_hash">${commit.hash.substring(0, 6)}</label>
+                <div class="commit_text"><span>${commit.shortMessage}</span><label class="commit_hash">${commit.hash.substring(0, 6)}</label></div>
             `;
                 ul.appendChild(li);
             });
